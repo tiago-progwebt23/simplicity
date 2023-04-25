@@ -4,6 +4,7 @@ const campoCep = formulario.querySelector("#cep");
 const campoEndereco = formulario.querySelector("#endereco");
 const campoBairro = formulario.querySelector("#bairro");
 const campoCidade = formulario.querySelector("#cidade");
+const campoEstado = formulario.querySelector("#estado");
 const status = formulario.querySelector("#status");
 const botaoLocalizar = formulario.querySelector("#localizar-cep");
 
@@ -35,5 +36,20 @@ botaoLocalizar.addEventListener("click", function(event){
     e mostre na tela */
     .then( dados => {
         console.log(dados);
+
+        // Se existir o indicador "erro" no objeto dados
+        if( "erro" in dados ){
+            // Apresentamos a mensagem abaixo
+            console.log("CEP não encontrado!");
+        } else {
+            // Senão, o cep existe então mostramos:
+            console.log("CEP encontrado!");
+
+            campoEndereco.value = dados.logradouro;
+            campoBairro.value = dados.bairro;
+            campoCidade.value = dados.localidade;
+            campoEstado.value = dados.uf;
+        }
+
     } )
 });
