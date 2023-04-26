@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - Simplicity</title>
+
+    <!-- Importando o CSS do plugin Lightbox -->
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
+
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
     <header>
@@ -31,23 +37,46 @@
     <main>
         <article class="conteudo limitador">
             <h2>Serviços</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et error itaque perspiciatis? Ducimus nihil itaque molestias recusandae voluptatibus repellat culpa deleniti autem error mollitia, ab, officia placeat quos nam?</p>   
-            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et error itaque perspiciatis? Ducimus
+                nihil itaque molestias recusandae voluptatibus repellat culpa deleniti autem error mollitia, ab, officia
+                placeat quos nam?</p>
+
             <figure class="fotos">
-                <img src="imagens/desenvolvimento-web-mini.jpg" alt="">
-                <img src="imagens/design-grafico-mini.jpg" alt="">
-                <img src="imagens/marketing-digital-mini.jpg" alt="">
-                <img src="imagens/consultoria-treinamento-mini.jpg" alt="">
+                <a data-lightbox="galeria" data-title="Front-End"
+                 href="imagens/desenvolvimento-web.jpg">
+                    <img src="imagens/desenvolvimento-web-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="galeria" data-title="Edição de imagens"
+                href="imagens/design-grafico.jpg">
+                    <img src="imagens/design-grafico-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="galeria" data-title="Venda bem!"
+                href="imagens/marketing-digital.jpg">
+                    <img src="imagens/marketing-digital-mini.jpg" alt="">
+                </a>
+                <a data-lightbox="galeria" data-title="Aprenda o que precisar"
+                 href="imagens/consultoria-treinamento.jpg">
+                    <img src="imagens/consultoria-treinamento-mini.jpg" alt="">
+                </a>
             </figure>
         </article>
     </main>
 
     <footer>
         <p>Simplicity é um site fictício desenvolvido educacionalmente <br>
-        Senac Penha - 2023</p>
+            Senac Penha - 2023</p>
     </footer>
+
+    <!-- Biblioteca jQuery (dependência) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- JS do plugin Lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
 
     <script src="js/menu.js"></script>
 
+    <script src="js/galeria.js"></script>
+
 </body>
+
 </html>
