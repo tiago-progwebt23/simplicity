@@ -33,7 +33,7 @@
             <h2>Contato</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, laboriosam.</p>           
     
-<form action="https://formspree.io/f/xyyalqal" method="post" id="my-form">
+<form action="https://formspree.io/f/xyyalqal" method="post">
     <div>
         <label for="nome">Nome:</label>
         <input placeholder="Digite nome completo" type="text" name="nome" id="nome">
@@ -128,7 +128,6 @@
     </div>
 
     <button type="submit">Enviar</button>
-    <p id="my-form-status"></p>
 </form>
 
         </article>
@@ -147,39 +146,6 @@
 
     <script src="js/menu.js"></script>
     <script src="js/contato.js"></script>
-
-    <script>
-        var form = document.getElementById("my-form");
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset()
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
-            }
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
-      });
-    }
-    form.addEventListener("submit", handleSubmit)
-    </script>
 
 </body>
 </html>
